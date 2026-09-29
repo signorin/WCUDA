@@ -1,0 +1,224 @@
+/* carousel-testimonial: one bordered quote card visible at a time, chevron arrows
+   overlaid on the left/right edges, heart rating above the quote.
+   Values from https://www.wingscu.com/ (.block.testimonials .quote-wrapper). */
+
+/* mobile first (source: <= 785px) */
+.carousel-testimonial {
+  position: relative;
+  max-width: 1280px;
+  margin: 40px auto 0;
+  padding: 20px 0 50px;
+  color: var(--text-color);
+}
+
+.carousel-testimonial .carousel-testimonial-slides,
+.carousel-testimonial .carousel-testimonial-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-testimonial .carousel-testimonial-slides {
+  position: relative; /* offsetParent for slide scroll positions */
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid var(--brand-cream);
+  background-color: var(--background-color);
+  overflow: scroll clip;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-testimonial .carousel-testimonial-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-testimonial .carousel-testimonial-slide {
+  flex: 0 0 100%;
+  display: flex;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+.carousel-testimonial .carousel-testimonial-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* photo column: desktop only (source hides it <= 1024px) */
+.carousel-testimonial .carousel-testimonial-photo {
+  display: none;
+}
+
+.carousel-testimonial .carousel-testimonial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.carousel-testimonial .carousel-testimonial-content > * {
+  max-width: 800px;
+  margin: 0;
+}
+
+/* quote */
+.carousel-testimonial .carousel-testimonial-content > :first-child {
+  position: relative;
+  color: var(--link-color);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* heart rating, positioned above the quote */
+.carousel-testimonial .carousel-testimonial-content > :first-child::before {
+  content: '';
+  position: absolute;
+  top: -44px;
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 14px;
+  background: url('../../icons/testimonial-hearts.svg') 50% / contain no-repeat;
+}
+
+/* member name + member-since */
+.carousel-testimonial .carousel-testimonial-name {
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.carousel-testimonial .carousel-testimonial-name strong {
+  font-weight: inherit;
+}
+
+/* prev / next chevrons overlaid on the card edges (override global button styles) */
+.carousel-testimonial .carousel-testimonial-prev,
+.carousel-testimonial .carousel-testimonial-next {
+  position: absolute;
+  top: calc(50% - 15px);
+  z-index: 1;
+  width: 17.5px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: center / contain no-repeat;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.carousel-testimonial .carousel-testimonial-prev {
+  left: 0;
+  background-image: url('../../icons/testimonial-prev.svg');
+}
+
+.carousel-testimonial .carousel-testimonial-next {
+  right: 0;
+  background-image: url('../../icons/testimonial-next.svg');
+}
+
+/* slide dots: present for keyboard/screen-reader parity but hidden, as on the source */
+.carousel-testimonial nav {
+  display: none;
+}
+
+.carousel-testimonial .carousel-testimonial-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-testimonial .carousel-testimonial-indicator button {
+  width: 15px;
+  height: 15px;
+  margin: 4px 5px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: var(--brand-teal);
+  font-size: 0;
+}
+
+.carousel-testimonial .carousel-testimonial-indicator button:disabled {
+  background: var(--brand-indigo);
+}
+
+/* source: >= 786px */
+@media (width >= 786px) {
+  .carousel-testimonial {
+    padding: 0 50px;
+  }
+
+  /* source list is 360px tall including its border; slides stretch to fill it */
+  .carousel-testimonial .carousel-testimonial-slides {
+    height: 360px;
+    border-radius: 16px;
+  }
+
+  .carousel-testimonial .carousel-testimonial-card {
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+  }
+
+  .carousel-testimonial .carousel-testimonial-content {
+    flex: 1;
+    padding: 85px 60px 55px;
+  }
+
+  .carousel-testimonial .carousel-testimonial-content > :first-child {
+    font-size: 26px;
+    line-height: 1.2308;
+  }
+}
+
+/* source: >= 1025px shows the member photo as a left column */
+@media (width >= 1025px) {
+  .carousel-testimonial .carousel-testimonial-photo {
+    display: block;
+    flex: 0 0 350px;
+    align-self: stretch;
+    overflow: hidden;
+    border-radius: 8px;
+    line-height: 0;
+  }
+
+  .carousel-testimonial .carousel-testimonial-photo picture,
+  .carousel-testimonial .carousel-testimonial-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-testimonial .carousel-testimonial-photo img {
+    max-width: none;
+    object-fit: cover;
+  }
+
+  .carousel-testimonial .carousel-testimonial-card-photo .carousel-testimonial-content > :first-child {
+    font-size: 22px;
+    line-height: 1.2727;
+  }
+}
+
+@media (width >= 1025px) and (width <= 1350px) {
+  .carousel-testimonial .carousel-testimonial-card-photo .carousel-testimonial-photo {
+    flex-basis: 340px;
+  }
+
+  .carousel-testimonial .carousel-testimonial-card-photo .carousel-testimonial-content {
+    padding: 40px;
+  }
+
+  .carousel-testimonial .carousel-testimonial-card-photo .carousel-testimonial-content > :first-child {
+    font-size: 18px;
+  }
+}

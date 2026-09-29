@@ -1,20 +1,276 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+/* Footer: values measured on https://www.wingscu.com/ (mobile-first; desktop from 1025px) */
+/* stylelint-disable no-descending-specificity */
+
+footer .footer {
+  padding: 30px;
+  background-color: var(--brand-midnight);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.16px;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer-inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+footer .footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer a:any-link {
+  color: #fff;
+  text-decoration: none;
 }
 
 footer .footer p {
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+/* row 1: legal links + social icons */
+footer .footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+footer .footer-legal {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+footer .footer-legal li {
+  padding: 10px 0;
+}
+
+footer .footer-legal li:first-child {
+  padding-top: 0;
+}
+
+footer .footer-legal .footer-static {
+  padding: 20px 0 10px;
+  text-align: center;
+}
+
+footer .footer-legal a:any-link {
+  display: block;
+  font-weight: 800;
+}
+
+footer .footer-legal a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .footer-social {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+}
+
+footer .footer-social a:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 30px;
+}
+
+footer .footer-social-icon {
+  display: block;
+  width: 21px;
+  height: 21px;
+  background: center / contain no-repeat;
+}
+
+/* row 2: notices */
+footer .footer-notices {
+  margin: 55px 0 40px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+footer .footer-notices p + p {
+  margin-top: 15.6px;
+}
+
+footer .footer-notices a:any-link {
+  color: #00a4a2;
+  font-weight: 700;
+}
+
+footer .footer-notices a:hover {
+  color: #00a4a2;
+  text-decoration: underline;
+}
+
+/* row 3: certifications + copyright */
+footer .footer-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .footer-certs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 86px;
+  gap: 0 20px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+footer .footer-certs li {
+  margin-right: 0;
+}
+
+/* badge items carry 6px below the image, as on the source */
+footer .footer-certs li:has(img) {
+  padding-bottom: 6px;
+}
+
+/* text items after the badges start their own rows, inset 10px, as on the source */
+footer .footer-certs .footer-static,
+footer .footer-certs li:has(.footer-consent-button) {
+  flex: 0 0 calc(100% - 20px);
+  margin: 0 10px;
+}
+
+footer .footer-certs a:any-link {
+  font-weight: 400;
+}
+
+footer .footer-certs a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer .footer-certs img {
+  display: block;
+  width: auto;
+  height: 80px;
+}
+
+footer .footer-certs li:nth-child(2) img {
+  height: 72px;
+}
+
+/* privacy-choices action rendered as an outline button, as on the source */
+footer .footer-certs .footer-consent-button {
+  width: 100%;
+  margin: 0;
+  background: none;
+  font-family: var(--body-font-family);
+  cursor: pointer;
+  white-space: normal;
+}
+
+footer .footer-certs .footer-consent-button,
+footer .footer-certs a.footer-consent-link:any-link {
+  display: inline-block;
+  border: 2px solid #00a4a2;
+  border-radius: 8px;
+  padding: 3px 10px;
+  color: #00a4a2;
+  font-size: 13.3333px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+footer .footer-certs .footer-consent-button:hover,
+footer .footer-certs .footer-consent-button:focus,
+footer .footer-certs a.footer-consent-link:hover {
+  border-color: #00a4a2;
+  background: none;
+  color: #00a4a2;
+  text-decoration: none;
+}
+
+footer .footer-copyright {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* breakpoint-exception: matches the header, which switches to desktop at 1025px like the source */
+@media (width >= 1025px) {
+  footer .footer {
+    padding: 44px 30px;
+  }
+
+  footer .footer-top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    min-height: 35px;
+  }
+
+  footer .footer-legal {
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+
+  footer .footer-legal li,
+  footer .footer-legal li:first-child,
+  footer .footer-legal .footer-static {
+    margin-right: 0;
+    padding: 0 15px;
+    text-align: start;
+  }
+
+  footer .footer-legal li:first-child {
+    padding-left: 0;
+  }
+
+  footer .footer-social a:any-link {
+    width: 26px;
+  }
+
+  footer .footer-notices {
+    margin: 40px 0;
+    line-height: 15.6px;
+  }
+
+  footer .footer-certs .footer-static,
+  footer .footer-certs li:has(.footer-consent-button) {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  footer .footer-certs .footer-consent-button {
+    width: auto;
+  }
+
+  footer .footer-copyright {
+    text-align: start;
+  }
+
+  footer .footer-social {
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
+
+  footer .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  footer .footer-certs {
+    flex-wrap: nowrap;
+    gap: 20px;
   }
 }

@@ -1,0 +1,136 @@
+/* columns-media: image + text promo (source: wingscu.com .content-text).
+   Background / section padding come from section-metadata style (dark / cream).
+   Breakpoints mirror the source: stacked <= 785px, 2-col 786-1024px,
+   450px image column 1025-1230px, 500px image column >= 1231px. */
+
+.columns-media {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.columns-media .columns-media-row {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* mobile: text first, image below (as on source) */
+.columns-media .columns-media-text-col {
+  order: 0;
+}
+
+.columns-media .columns-media-img-col {
+  order: 1;
+  line-height: 0;
+}
+
+.columns-media .columns-media-img-col picture {
+  display: block;
+}
+
+.columns-media .columns-media-img-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* typography */
+.columns-media .columns-media-text-col h2 {
+  margin: 0 0 24px;
+  font-size: 36px;
+  line-height: 1.1667;
+}
+
+.columns-media .columns-media-text-col p {
+  margin: 40px 0;
+}
+
+.columns-media .columns-media-text-col > :first-child {
+  margin-top: 0;
+}
+
+.columns-media .columns-media-text-col > :last-child {
+  margin-bottom: 0;
+}
+
+.columns-media .columns-media-text-col a:any-link:not(.button) {
+  color: var(--link-color);
+  font-weight: 800;
+}
+
+/* dark section (source theme-breeze) */
+main .section.dark .columns-media .columns-media-text-col a:any-link:not(.button) {
+  color: #00a4a2;
+}
+
+main .section.dark .columns-media a.button:any-link:hover,
+main .section.dark .columns-media a.button:any-link:focus {
+  border-color: var(--brand-teal);
+  background-color: transparent;
+}
+
+/* tablet: two equal columns, image side follows authored order */
+@media (width >= 786px) {
+  .columns-media .columns-media-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .columns-media .columns-media-img-col,
+  .columns-media .columns-media-text-col {
+    order: 0;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .columns-media .columns-media-img-col img {
+    max-width: 425px;
+  }
+
+  .columns-media .columns-media-text-col {
+    padding-left: 80px;
+  }
+
+  .columns-media .columns-media-img-right .columns-media-text-col {
+    padding-right: 80px;
+    padding-left: 0;
+  }
+
+  .columns-media .columns-media-no-image .columns-media-text-col {
+    padding: 0;
+  }
+}
+
+/* desktop: fixed image column, 150px inner spacing */
+@media (width >= 1025px) {
+  .columns-media .columns-media-text-col h2 {
+    font-size: var(--heading-font-size-xl);
+    line-height: 1.2;
+  }
+
+  .columns-media .columns-media-img-col {
+    flex: 0 0 450px;
+  }
+
+  .columns-media .columns-media-img-col img {
+    max-width: 480px;
+  }
+
+  .columns-media .columns-media-text-col {
+    padding-left: 150px;
+  }
+
+  .columns-media .columns-media-img-right .columns-media-text-col {
+    padding-right: 150px;
+    padding-left: 0;
+  }
+}
+
+@media (width >= 1231px) {
+  .columns-media .columns-media-img-col {
+    flex-basis: 500px;
+  }
+}

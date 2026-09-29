@@ -1,0 +1,82 @@
+/* cards-awards: badge + title + caption, rows of 3 (a trailing pair splits the row in halves) */
+
+/* the source separates the awards from the section heading by one section padding */
+.cards-awards {
+  padding-top: var(--section-padding);
+}
+
+.cards-awards > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-awards .cards-awards-card {
+  box-sizing: border-box;
+  margin: 0 0 25px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* each group of 3 awards is its own padded row on the source */
+.cards-awards .cards-awards-card:nth-child(3n + 4) {
+  margin-top: calc(2 * var(--section-padding));
+}
+
+.cards-awards .cards-awards-card-badge {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20.8px;
+  line-height: 0;
+}
+
+.cards-awards .cards-awards-card-badge img {
+  display: block;
+  width: 125px;
+  height: 125px;
+  object-fit: contain;
+}
+
+.cards-awards .cards-awards-card-body h3 {
+  margin: 0;
+  color: var(--link-color);
+  font-size: var(--heading-size-xs);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: var(--heading-letter-spacing);
+}
+
+.cards-awards .cards-awards-card-body p {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: var(--body-font-weight);
+  line-height: 20px;
+}
+
+@media (width >= 900px) {
+  .cards-awards > ul {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: calc(2 * var(--section-padding));
+  }
+
+  .cards-awards .cards-awards-card,
+  .cards-awards .cards-awards-card:nth-child(3n + 4) {
+    flex: 0 0 calc(33.3333% - 25px);
+    margin: 0;
+  }
+
+  /* a single trailing award is centered on its own row */
+  .cards-awards .cards-awards-card:nth-child(3n + 1):last-child {
+    flex-basis: 100%;
+  }
+
+  /* a trailing pair of awards shares the row in halves, as on the source */
+  .cards-awards .cards-awards-card:nth-child(3n + 1):nth-last-child(2),
+  .cards-awards .cards-awards-card:nth-child(3n + 1):nth-last-child(2) + .cards-awards-card {
+    flex-basis: calc(50% - 25px);
+  }
+}

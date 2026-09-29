@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "url": "https://www.wingscu.com/",
+  "path": "index",
+  "timestamp": "2026-09-28T19:43:16.700Z",
+  "title": "Wings Credit Union | Loans, Mortgages & Savings Accounts",
+  "template": "home",
+  "blocks": [
+    "hero-split",
+    "cards-icon",
+    "columns-media",
+    "columns-media",
+    "carousel-testimonial",
+    "cards-awards",
+    "cards-awards",
+    "hero-callout"
+  ]
+}

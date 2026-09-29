@@ -1,0 +1,132 @@
+/* cards-icon: icon feature grid (source: .block.icon-grid .gis on wingscu.com) */
+
+/* intro default content sits 20px (its last <p> margin) above the grid on the source */
+main > .section > .default-content-wrapper + .cards-icon-wrapper {
+  margin-top: 0;
+}
+
+.cards-icon > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  gap: 50px;
+}
+
+.cards-icon .cards-icon-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px 0;
+  border-radius: 0;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+/* circular icon holder */
+.cards-icon .cards-icon-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 140px;
+  height: 140px;
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: 50%;
+  background: #ece8e1;
+  line-height: 0;
+}
+
+.cards-icon .cards-icon-card-icon picture {
+  display: contents;
+}
+
+.cards-icon .cards-icon-card-icon img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cards-icon .cards-icon-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cards-icon .cards-icon-card-body > * {
+  width: 100%;
+  margin: 0;
+}
+
+/* description */
+.cards-icon .cards-icon-card-body > p {
+  margin-top: 10px;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+/* arrow link: text visually hidden, chevron drawn from the source t-next.svg */
+.cards-icon .cards-icon-card-body > .cards-icon-card-link {
+  margin-top: 20px;
+  line-height: 0;
+}
+
+.cards-icon .cards-icon-card-link a:any-link {
+  display: inline-block;
+  width: 15px;
+  height: 30px;
+  overflow: hidden;
+  background: url('../../icons/arrow-next.svg') center / 15px 30px no-repeat;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* whole card is clickable, as on the source */
+.cards-icon .cards-icon-card-link a:any-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.cards-icon .cards-icon-card-link a:focus-visible {
+  outline: 2px solid var(--brand-teal);
+  outline-offset: 2px;
+}
+
+@media (width >= 786px) {
+  .cards-icon > ul {
+    flex-flow: row wrap;
+  }
+
+  .cards-icon .cards-icon-card {
+    flex: 0 0 calc(33.3333% - 35px);
+    width: calc(33.3333% - 35px);
+    padding: 30px 15px;
+  }
+}
+
+@media (width >= 1025px) {
+  .cards-icon .cards-icon-card {
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  .cards-icon .cards-icon-card:hover {
+    box-shadow: 0 0 10px rgb(41 30 71 / 30%);
+    cursor: pointer;
+  }
+}

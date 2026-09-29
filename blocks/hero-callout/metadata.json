@@ -1,0 +1,32 @@
+{
+  "variantName": "hero-callout",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-09-28T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.wingscu.com/",
+    "discoveredDuring": "site-migration per-page path",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "density": "spacious",
+    "purpose": "cta-banner",
+    "imagePattern": "large background",
+    "layout": "full-bleed photo with light content box overlaid on the left"
+  },
+  "contentPattern": {
+    "structure": "Row 1: background image; Row 2: H2, paragraph, primary CTA (bold link), secondary CTA (italic link) (background image + heading + text + 2 ctas)",
+    "buttonCount": 2,
+    "imageCount": 1,
+    "hasDescription": true
+  },
+  "options": [],
+  "memberVariantIds": ["hero-callout"],
+  "usage": {
+    "pagesUsing": ["/"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-28T00:00:00.000Z"
+  }
+}

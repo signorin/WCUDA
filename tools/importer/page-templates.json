@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://www.wingscu.com/"
+      ],
+      "representativeUrl": "https://www.wingscu.com/",
+      "description": "Wings Credit Union homepage: split hero, product icon grid, promo sections, testimonials carousel, awards and membership callout",
+      "urlPattern": "/",
+      "blocks": [
+        {
+          "name": "hero-split",
+          "instances": [
+            ".block.home-hero-block"
+          ]
+        },
+        {
+          "name": "cards-icon",
+          "instances": [
+            ".block.icon-grid .gis"
+          ]
+        },
+        {
+          "name": "columns-media",
+          "instances": [
+            ".block.content-text"
+          ]
+        },
+        {
+          "name": "carousel-testimonial",
+          "instances": [
+            ".block.testimonials .quote-wrapper"
+          ]
+        },
+        {
+          "name": "cards-awards",
+          "instances": [
+            ".column-content.block"
+          ]
+        },
+        {
+          "name": "hero-callout",
+          "instances": [
+            ".block.callout"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "1",
+          "name": "hero",
+          "selector": [
+            ".block.home-hero-block"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-split"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "2",
+          "name": "product-icon-grid",
+          "selector": [
+            ".block.icon-grid"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-icon"
+          ],
+          "defaultContent": [
+            ".block.icon-grid .block-intro"
+          ]
+        },
+        {
+          "id": "3",
+          "name": "hunger-action-month",
+          "selector": [
+            ".rpt-block:has(> .block.headline-text.light-gray-bg)",
+            ".block.headline-text.light-gray-bg"
+          ],
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": [
+            ".block.headline-text.light-gray-bg .block-intro"
+          ]
+        },
+        {
+          "id": "4",
+          "name": "medicare-promo",
+          "selector": [
+            ".rpt-block:has(.block.content-text.theme-breeze)",
+            ".block.content-text.theme-breeze"
+          ],
+          "style": "dark",
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "5",
+          "name": "social-follow-promo",
+          "selector": [
+            ".rpt-block:has(.block.content-text.theme-cream-small-arrow)",
+            ".block.content-text.theme-cream-small-arrow"
+          ],
+          "style": "cream",
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "6",
+          "name": "testimonials",
+          "selector": [
+            ".block.testimonials"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-testimonial"
+          ],
+          "defaultContent": [
+            ".block.testimonials .block-intro"
+          ]
+        },
+        {
+          "id": "7",
+          "name": "awards",
+          "selector": [
+            ".rpt-block:has(> .column-content.block)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-awards"
+          ],
+          "defaultContent": [
+            ".block.headline-text.white-bg .block-intro"
+          ]
+        },
+        {
+          "id": "8",
+          "name": "membership-callout",
+          "selector": [
+            ".block.callout"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-callout"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

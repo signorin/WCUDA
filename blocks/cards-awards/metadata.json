@@ -1,0 +1,32 @@
+{
+  "variantName": "cards-awards",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-09-28T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.wingscu.com/",
+    "discoveredDuring": "site-migration per-page path",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "awards",
+    "imagePattern": "badge",
+    "layout": "centered wrapping grid, 3 then 2 per row"
+  },
+  "contentPattern": {
+    "structure": "one row per award: [badge image | H3 title, caption paragraph] (badge + title + caption)",
+    "buttonCount": 0,
+    "imageCount": 1,
+    "hasDescription": true
+  },
+  "options": [],
+  "memberVariantIds": ["cards-awards"],
+  "usage": {
+    "pagesUsing": ["/"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-28T00:00:00.000Z"
+  }
+}

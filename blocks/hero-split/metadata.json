@@ -1,0 +1,32 @@
+{
+  "variantName": "hero-split",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-09-28T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.wingscu.com/",
+    "discoveredDuring": "site-migration per-page path",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large",
+    "layout": "50/50 split, text panel left, photo bleeding to right edge"
+  },
+  "contentPattern": {
+    "structure": "Row 1: image; Row 2: H1 heading, paragraph, CTA link (heading + text + cta + side image)",
+    "buttonCount": 1,
+    "imageCount": 1,
+    "hasDescription": true
+  },
+  "options": [],
+  "memberVariantIds": ["hero-split"],
+  "usage": {
+    "pagesUsing": ["/"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-28T00:00:00.000Z"
+  }
+}

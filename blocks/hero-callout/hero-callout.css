@@ -1,0 +1,113 @@
+/* hero-callout: full-bleed background photo with a white content card overlaid on the left */
+
+/* the block owns its vertical spacing; drop the global section padding */
+main > .section.hero-callout-container {
+  padding: 0;
+}
+
+/* full-bleed: break out of the section's max-width container */
+.hero-callout-container .hero-callout-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-callout {
+  position: relative;
+  padding: 30px 0;
+}
+
+/* photo covers the whole block (source: background center top / cover) */
+.hero-callout .hero-callout-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-callout .hero-callout-media picture,
+.hero-callout .hero-callout-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-callout .hero-callout-media img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-callout .hero-callout-inner {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* the overlaid content card */
+.hero-callout .hero-callout-content {
+  position: relative;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 16px;
+  background-color: var(--background-color);
+}
+
+.hero-callout .hero-callout-content h2 {
+  margin: 0 0 24px;
+  font-size: 34px;
+}
+
+.hero-callout .hero-callout-content p {
+  margin: 0 0 30px;
+  font-weight: 400;
+}
+
+.hero-callout .hero-callout-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* primary + secondary CTA stacked and centred */
+.hero-callout .hero-callout-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.hero-callout .hero-callout-actions > p,
+.hero-callout .hero-callout-actions > .button-container {
+  margin: 0;
+}
+
+@media (width >= 786px) {
+  .hero-callout {
+    padding: 40px 30px;
+  }
+
+  .hero-callout .hero-callout-inner {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  /* card column: 510px incl. 30px top/right offset -> 480px card */
+  .hero-callout .hero-callout-content {
+    width: 100%;
+    max-width: 480px;
+    margin-top: 30px;
+    padding: 60px;
+  }
+
+  .hero-callout .hero-callout-content h2 {
+    font-size: 44px;
+  }
+}
+
+@media (width >= 1025px) {
+  .hero-callout {
+    padding: 80px 60px;
+  }
+}

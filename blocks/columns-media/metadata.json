@@ -1,0 +1,36 @@
+{
+  "variantName": "columns-media",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-09-28T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.wingscu.com/",
+    "discoveredDuring": "site-migration per-page path",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "density": "spacious",
+    "purpose": "image-text-promo",
+    "imagePattern": "large rounded",
+    "layout": "2 columns, photo left or right by authored cell order; background driven by section-metadata style (dark / cream)"
+  },
+  "contentPattern": {
+    "structure": "1 row x 2 cells: [image | H2, paragraph, CTA link] or [H2, paragraph with inline links | image] (image + heading + text + cta)",
+    "buttonCount": 1,
+    "imageCount": 1,
+    "hasDescription": true
+  },
+  "sectionMetadata": [
+    { "style": "dark" },
+    { "style": "cream" }
+  ],
+  "options": [],
+  "memberVariantIds": ["columns-media"],
+  "usage": {
+    "pagesUsing": ["/"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-28T00:00:00.000Z"
+  }
+}

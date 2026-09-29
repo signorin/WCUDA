@@ -29,6 +29,8 @@ import {
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
+  // skip when the h1 or picture already belongs to an authored block (e.g. hero-split)
+  if ([h1, picture].some((el) => el && el.closest('main > div > div[class]'))) return;
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');

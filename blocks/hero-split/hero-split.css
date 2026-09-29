@@ -1,0 +1,121 @@
+/* hero-split: 50/50 split hero, values from wingscu.com .home-hero-block (theme-cobalt) */
+
+/* first section: no global section padding, block bleeds full width */
+main > .section.hero-split-container {
+  padding: 0;
+}
+
+.hero-split-container .hero-split-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-split {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 30px 30px;
+  background-color: var(--brand-midnight);
+  color: var(--background-color);
+}
+
+.hero-split .hero-split-content {
+  box-sizing: border-box;
+  padding: 120px 0 30px;
+}
+
+.hero-split .hero-split-content h1 {
+  margin: 0 0 20px;
+  color: var(--background-color);
+}
+
+.hero-split .hero-split-content h1 sup {
+  position: relative;
+  top: -5px;
+  font-size: 0.5em;
+  line-height: 2.4;
+  vertical-align: top;
+}
+
+.hero-split .hero-split-content p {
+  margin: 0 0 40px;
+  color: var(--background-color);
+}
+
+.hero-split .hero-split-content > :last-child,
+.hero-split .hero-split-content p.button-container {
+  margin-bottom: 0;
+}
+
+.hero-split a.button:hover,
+.hero-split a.button:focus {
+  border-color: var(--brand-teal);
+  background-color: transparent;
+  color: var(--background-color);
+}
+
+/* mobile: photo below the text as a rounded image */
+.hero-split .hero-split-media picture,
+.hero-split .hero-split-media img {
+  display: block;
+  width: 100%;
+}
+
+.hero-split .hero-split-media img {
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (width >= 768px) {
+  .hero-split .hero-split-content {
+    padding-top: 170px;
+  }
+}
+
+/* desktop: text panel on the left half of a 1280px container, masked photo bleeding right */
+@media (width >= 900px) {
+  .hero-split {
+    display: flex;
+    align-items: stretch;
+    padding: 0 30px;
+  }
+
+  .hero-split .hero-split-content {
+    flex: 0 0 calc(min(1280px, 100%) * 0.4);
+    margin-left: max(0px, (100% - 1280px) / 2);
+    padding: 140px 0;
+  }
+
+  .hero-split .hero-split-media {
+    position: relative;
+    flex: 0 0 calc(128px + 50vw);
+    mask-image: url('./hero-mask.svg');
+    mask-size: cover;
+    mask-repeat: no-repeat;
+  }
+
+  .hero-split .hero-split-media picture {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-split .hero-split-media img {
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  .hero-split.hero-split-no-image .hero-split-content {
+    flex: 1 1 auto;
+  }
+}
+
+@media (width >= 1231px) {
+  .hero-split .hero-split-content {
+    flex-basis: calc(min(1280px, 100%) / 2);
+  }
+
+  .hero-split .hero-split-media {
+    flex-basis: calc(64px + 50vw);
+  }
+}

@@ -1,0 +1,67 @@
+/* Wings Credit Union brand tokens, extracted from https://www.wingscu.com/ */
+:root {
+  /* fonts */
+  --heading-font-family: poppins, poppins-fallback, arial, sans-serif;
+  --body-font-family: poppins, poppins-fallback, arial, sans-serif;
+
+  /* core colors */
+  --background-color: #fff;
+  --text-color: #3d3d3f;
+  --heading-color: #3c306d;
+  --link-color: #017b84;
+  --link-hover-color: #0d5257;
+
+  /* brand palette */
+  --brand-teal: #017b84;
+  --brand-teal-dark: #0d5257;
+  --brand-indigo: #3c306d;
+  --brand-midnight: #291e47;
+  --brand-off-white: #f6f4f0;
+  --brand-cream: #e5e0d9;
+
+  /* section backgrounds */
+  --light-color: var(--brand-off-white);
+  --dark-color: var(--brand-midnight);
+  --cream-color: var(--brand-cream);
+
+  /* layout */
+  --content-max-width: 1280px;
+  --section-padding: 40px;
+  --section-gutter: 30px;
+  --nav-height: 60px;
+
+  /* body */
+  --body-font-weight: 500;
+  --body-line-height: 1.25;
+  --body-letter-spacing: -0.01em;
+
+  /* headings */
+  --heading-letter-spacing: -0.015em;
+  --heading-size-xxl: 44.8px;
+  --heading-size-xl: 41.6px;
+  --heading-size-l: 24px;
+  --heading-size-m: 20px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+
+  /* buttons */
+  --button-radius: 8px;
+  --button-padding: 12px 20px;
+  --button-font-weight: 600;
+}
+
+@media (width >= 900px) {
+  :root {
+    --section-padding: 80px;
+    --section-gutter: 32px;
+    --heading-size-xxl: 60.8px;
+  }
+}
+
+/* the header switches to its desktop layout at 1025px, as on the source */
+@media (width >= 1025px) {
+  :root {
+    /* utility bar (36px) + main bar (110px) */
+    --nav-height: 146px;
+  }
+}
