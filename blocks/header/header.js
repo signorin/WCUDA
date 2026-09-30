@@ -55,6 +55,9 @@ async function fetchNavFragment() {
   // some servers wrap the fragment in a full page: use its <main> content
   const main = fragment.querySelector('main');
   if (main) fragment.replaceChildren(...main.children);
+  // published fragments wrap list-item labels in <p> (e.g. <li><p><a>…</a></p><ul>…);
+  // unwrap them so local and published markup read the same
+  fragment.querySelectorAll('li > p').forEach((p) => p.replaceWith(...p.childNodes));
 
   // resolve relative image paths against the fragment location
   // (resp.url can be empty, e.g. when a service worker answers the request)
@@ -277,7 +280,7 @@ function buildAside(list) {
   const li = directChildren(list, 'li')[0];
   const { text } = ownLabel(li);
   const aside = el('div', 'nav-panel-aside');
-  const heading = el('p', 'nav-panel-aside-title');
+  const heading = el('h2', 'nav-panel-aside-title');
   heading.textContent = text;
   const links = directChildren(li, 'ul')[0] || el('ul');
   links.className = 'nav-panel-aside-links';
@@ -376,7 +379,7 @@ function buildSignInPanel(section, action) {
   const form = el('form', 'nav-signin-panel', { action, method: 'post', id: 'nav-signin-panel' });
   const content = el('div', 'nav-signin-content');
   const title = section.querySelector('h2');
-  const heading = el('p', 'nav-signin-title');
+  const heading = el('h2', 'nav-signin-title');
   heading.textContent = title?.textContent.trim() || '';
   const [userLabel, rememberLabel, submitLabel] = [...(section.querySelector('ol')?.children || [])]
     .map((li) => li.textContent.trim());
